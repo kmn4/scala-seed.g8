@@ -1,7 +1,7 @@
 object Reader {
-  val s = new java.util.Scanner(System.in)
+  val s = new java.util.Scanner(Console.in)
 }
 
 object Main extends App {
-  println("Hello")
+  import Reader.s
 }
