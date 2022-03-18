@@ -28,12 +28,12 @@ class Test extends AnyFunSuite {
   }
 
   def testFile(n: Int)(implicit pos: Position): Unit = {
-    val input    = new FileReader(new File(s"test/case\$n"))
-    val expected = new FileReader(new File(s"test/answer\$n"))
+    val input    = new FileReader(new File(s"\$testCaseDir/case\$n"))
+    val expected = new FileReader(new File(s"\$testCaseDir/answer\$n"))
     val actual   = new ByteArrayOutputStream()
     Console.withIn(input) {
       Console.withOut(actual) {
-        (new Main).main(Array())
+        (new Solver).main(Array())
       }
     }
     test(s"case \${n}") {
